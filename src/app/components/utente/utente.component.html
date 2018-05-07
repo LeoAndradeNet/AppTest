@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col">
+        <h2>Busca de Utentes</h2>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-12">
+        <div class="input-group mb-3">
+            <input [(ngModel)]="searchPayload.informacoes" type="text" class="form-control" placeholder="Text to search">
+            <div class="input-group-append">
+                <button (click)="searchUtente();" [disabled]="!searchPayload.informacoes" class="btn btn-outline-primary">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <table class="table table-hover" *ngIf="utentes">
+        <thead>
+            <tr>
+                <th scope="col">Número do Processo</th>
+                <th scope="col">Registado Em</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data de Nascimento</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let utente of utentes">
+            <tr class="clickable" data-toggle="collapse" [attr.data-target]="'#' + (utente.numeroProcesso).replace('/', '')" >
+                <th scope="row"> {{utente.numeroProcesso}}</th>
+                <td>{{utente.registadoEm | date}}</td>
+                <td>{{utente.nome}}</td>
+                <td>{{utente.dataNascimento | date}}</td>
+            </tr>
+            <tr class="collapse" id="{{(utente.numeroProcesso).replace('/', '')}}">
+                <td colspan="4">
+                    <utente-detail [utente]="utente"></utente-detail>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

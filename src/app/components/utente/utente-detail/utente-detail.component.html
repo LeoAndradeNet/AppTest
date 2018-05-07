@@ -1,0 +1,36 @@
+<div class="row justify-content-md-center" *ngIf="utente">
+    <div class="col-10">
+
+        <div class="form-group row">
+            <label for="numeroContribuinte" class="col-sm-3 col-form-label">Numero Contribuinte</label>
+            <div class="col-sm-9">
+                <input [(ngModel)]="utente.numeroContribuinte" type="text" class="form-control" id="numeroContribuinte" placeholder="1234/123">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="nome" class="col-sm-3 col-form-label">Nome</label>
+            <div class="col-sm-9">
+                <input [(ngModel)]="utente.nome" type="text" class="form-control" id="nome" placeholder="1234/123">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="dataNascimento" class="col-sm-3 col-form-label">Data Nascimento</label>
+            <div class="col-sm-9">
+                <!-- <input [(ngModel)]="utente.dataNascimento" type="text" class="form-control" id="dataNascimento" placeholder="1234/123"> -->
+                <datepicker [(ngModel)]="utente.dataNascimento" [viewFormat]="'DD/MM/YYYY'" [modelFormat]="'YYYY-MM-DD'"  [id]="'dataNascimento'" [label]="'To'"></datepicker>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-3">Situação Profissional</div>
+            <div class="col-sm-9">
+                <div class="form-check">
+                    <input [(ngModel)]="utente.situacaoProfissionalAtiva" class="form-check-input" type="checkbox" id="situacaoProfissionalAtiva">
+                    <label class="form-check-label" for="situacaoProfissionalAtiva">
+                        Ativa
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
