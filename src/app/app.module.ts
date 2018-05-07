@@ -10,18 +10,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { UtenteDetailComponent } from './components/utente/utente-detail/utente-detail.component';
 import { UtenteComponent } from './components/utente/utente.component';
 import {APP_BASE_HREF} from '@angular/common';
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UtenteComponent,
-    UtenteDetailComponent
+    UtenteDetailComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule    
   ],
   providers: [UtenteService, {provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
