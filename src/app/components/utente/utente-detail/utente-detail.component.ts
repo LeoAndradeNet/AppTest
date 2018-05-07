@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { Utente } from "../../../models/utente";
 import { UtenteService } from "../../../services/utente.service";
+import { setTheme } from 'ngx-bootstrap/utils';
 
 @Component({
   selector: 'utente-detail',

@@ -9,6 +9,7 @@ import { UtenteService } from './services/utente.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UtenteDetailComponent } from './components/utente/utente-detail/utente-detail.component';
 import { UtenteComponent } from './components/utente/utente.component';
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { UtenteComponent } from './components/utente/utente.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [UtenteService],
+  providers: [UtenteService, {provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
