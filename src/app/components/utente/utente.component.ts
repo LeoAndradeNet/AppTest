@@ -14,8 +14,11 @@ export class UtenteComponent {
 
     constructor(private utenteService: UtenteService){}
 
-    searchUtente(): void {        
-        this.utenteService.searchUtente(this.searchPayload)
+    /**
+     * Funcao responsavel por pesquisar Utentes
+     */
+    search(): void {        
+        this.utenteService.search(this.searchPayload)
             .subscribe(utentes => this.utentes = utentes);        
     }
 }

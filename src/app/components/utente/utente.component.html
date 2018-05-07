@@ -9,7 +9,7 @@
         <div class="input-group mb-3">
             <input [(ngModel)]="searchPayload.informacoes" type="text" class="form-control" placeholder="Text to search">
             <div class="input-group-append">
-                <button (click)="searchUtente();" [disabled]="!searchPayload.informacoes" class="btn btn-outline-primary">Search</button>
+                <button (click)="search();" [disabled]="!searchPayload.informacoes" class="btn btn-outline-primary">Search</button>
             </div>
         </div>
     </div>
